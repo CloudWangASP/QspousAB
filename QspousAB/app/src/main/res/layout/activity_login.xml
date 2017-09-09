@@ -8,12 +8,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorWhite"
     tools:context="com.xc.qspousab.LoginActivity">
 
     <ImageView
         android:id="@+id/logoo"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="150dp"
+        android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/logo" />
     //＊＊＊插入log＊＊＊
@@ -23,9 +25,11 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_below="@+id/logoo"
+        android:textColor="@color/colorBlack"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:text="Account Book"
+        android:textStyle="italic"
         android:textSize="30sp" />
 
     <Button
@@ -34,6 +38,9 @@
         android:layout_height="50dp"
         android:layout_below="@+id/bill"
         android:layout_centerHorizontal="true"
+        android:background="@color/colorLogoYellow"
+        android:textColor="@color/colorBlack"
+        android:textSize="22sp"
         android:layout_marginTop="50dp"
         android:text="员工账本" />
 
@@ -43,6 +50,9 @@
         android:layout_height="50dp"
         android:layout_below="@+id/yuangong"
         android:layout_centerHorizontal="true"
+        android:background="@color/colorLogoYellow"
+        android:textColor="@color/colorBlack"
+        android:textSize="22sp"
         android:layout_marginTop="30dp"
         android:text="老板账本" />
 
