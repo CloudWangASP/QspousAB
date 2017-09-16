@@ -5,10 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.gitonway.lee.niftymodaldialogeffects.lib.Effectstype;
-import com.gitonway.lee.niftymodaldialogeffects.lib.NiftyDialogBuilder;
+import com.xc.qspousab.view.NiftyDialogBuilder;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -26,31 +27,38 @@ public class LoginActivity extends AppCompatActivity {
         yuangong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NiftyDialogBuilder dialogBuilder=NiftyDialogBuilder.getInstance(LoginActivity.this);
+                final NiftyDialogBuilder dialogBuilder = NiftyDialogBuilder.getInstance(LoginActivity.this);
                 dialogBuilder
-                        .withTitle("Modal Dialog")                                  //.withTitle(null)  no title
-                        .withTitleColor("#FFFFFF")                                  //def
-                        .withDividerColor("#11000000")                              //def
-                        .withMessage("This is a modal Dialog.")                     //.withMessage(null)  no Msg
-                        .withMessageColor("#FFFFFFFF")                              //def  | withMessageColor(int resid)
-                        .withDialogColor("#FFE74C3C")                               //def  | withDialogColor(int resid)
-                        .withIcon(getResources().getDrawable(R.drawable.logo))
-                        .withDuration(700)                                          //def
-                        .withEffect(Effectstype.Slidetop)                                         //def Effectstype.Slidetop
-                        .withButton1Text("OK")                                      //def gone
-                        .withButton2Text("Cancel")                                  //def gone
+                        .withTitle("员工账本")                                  //.withTitle(null)  no title
+                        .withTitleColor(getResources().getColor(R.color.colorWhite))                                  //def
+                        .withDividerColor(getResources().getColor(R.color.colorLogoYellow))                              //def
+                        .withMessage("请在此输入密码")                     //.withMessage(null)  no Msg
+                        .withMessageColor(getResources().getColor(R.color.colorWhite))                              //def  | withMessageColor(int resid)
+                        .withDialogColor(getResources().getColor(R.color.colorLogoYellow))                               //def  | withDialogColor(int resid)
+                        .withIcon(getResources().getDrawable(R.drawable.dialog_icon))
+                        .withDuration(500)                                          //def
+                        .withEffect(Effectstype.Newspager)                                         //def Effectstype.Slidetop
+                        .withButton1Text("确定")//def gone
+                        .withButton2Text("取消")                                  //def gone
                         .isCancelableOnTouchOutside(true)                           //def    | isCancelable(true)
-                        .setCustomView(R.layout.dialog_layout,v.getContext())         //.setCustomView(View or ResId,context)
+                        .setCustomView(R.layout.activity_dialog_key, v.getContext())         //.setCustomView(View or ResId,context)
                         .setButton1Click(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Toast.makeText(v.getContext(), "i'm btn1", Toast.LENGTH_SHORT).show();
+                                EditText keyword = (EditText) dialogBuilder.getCustomView().findViewById(R.id.keyword);
+                                if (keyword.getText().toString().equals("123456")) {
+                                    Intent intent = new Intent();
+                                    intent.setClass(LoginActivity.this, Login2Activity.class);
+                                    startActivity(intent);
+                                } else {
+                                    Toast.makeText(LoginActivity.this, "请输入正确密码", Toast.LENGTH_LONG).show();
+                                }
                             }
                         })
                         .setButton2Click(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Toast.makeText(v.getContext(),"i'm btn2",Toast.LENGTH_SHORT).show();
+                                dialogBuilder.dismiss();
                             }
                         })
                         .show();
