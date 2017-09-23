@@ -1,4 +1,4 @@
-package com.xc.qspousab;
+package com.xc.qspousab.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.gitonway.lee.niftymodaldialogeffects.lib.Effectstype;
+import com.xc.qspousab.R;
 import com.xc.qspousab.view.NiftyDialogBuilder;
 
 public class LoginActivity extends AppCompatActivity {

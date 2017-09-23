@@ -74,18 +74,19 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:gravity="center"
-            android:text="5月支出"
+            android:text="5月收入"
             android:textColor="@color/grey51"
-            android:textSize="15sp" />
+            android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/income_sum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:gravity="center"
             android:text="支出金额"
             android:textColor="@color/grey51"
-            android:textSize="9sp" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 
@@ -101,19 +102,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="5月收入"
+            android:text="5月支出"
             android:gravity="center"
             android:textColor="@color/grey51"
-            android:textSize="15sp" />
+            android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/pay_sum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:text="收入金额"
             android:gravity="center"
             android:textColor="@color/grey51"
-            android:textSize="9sp" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 

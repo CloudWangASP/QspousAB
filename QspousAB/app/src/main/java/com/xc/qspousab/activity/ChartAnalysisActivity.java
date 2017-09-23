@@ -1,7 +1,9 @@
-package com.xc.qspousab;
+package com.xc.qspousab.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.xc.qspousab.R;
 
 public class ChartAnalysisActivity extends AppCompatActivity {
 

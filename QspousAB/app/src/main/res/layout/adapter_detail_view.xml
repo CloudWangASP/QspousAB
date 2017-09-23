@@ -51,7 +51,7 @@
             android:layout_gravity="center_vertical"
             android:gravity="right"
             android:textColor="@color/grey51"
-            android:textSize="9sp"
+            android:textSize="10sp"
             android:text="税金"/>
 
     </LinearLayout>
@@ -81,7 +81,7 @@
             android:layout_gravity="center_vertical"
             android:gravity="left"
             android:textColor="@color/grey51"
-            android:textSize="9sp"
+            android:textSize="10sp"
             android:text="买衣服"/>
 
     </LinearLayout>

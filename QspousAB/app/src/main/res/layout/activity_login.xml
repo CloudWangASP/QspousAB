@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/colorWhite"
-    tools:context="com.xc.qspousab.LoginActivity">
+    tools:context="com.xc.qspousab.activity.LoginActivity">
 
     <ImageView
         android:id="@+id/logoo"
