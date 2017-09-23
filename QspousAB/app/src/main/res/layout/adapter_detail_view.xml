@@ -4,59 +4,83 @@
     android:layout_height="wrap_content"
     android:background="@color/colorWhite">
 
+    <View
+        android:id="@+id/virtical_line"
+        android:layout_width="1dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/grey61" />
+
+    <TextView
+        android:id="@+id/circular_shape_layout"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/income"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/circular_shape_hot_pink"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:text="S"
+        android:textColor="@android:color/white" />
+
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toLeftOf="@id/circular_shape_layout"
+        android:layout_marginRight="15dp"
+        android:layout_centerVertical="true">
 
         <TextView
-            android:id="@+id/incomeOutput"
-            android:layout_width="80dp"
+            android:id="@+id/income_output"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="10dp"
-            android:ellipsize="end"
-            android:gravity="center"
-            android:paddingBottom="15dp"
-            android:paddingTop="15dp"
-            android:singleLine="true"
-            android:textColor="@color/colorBlack"
-            android:textSize="22sp" />
-
-        <View
-            android:id="@+id/leftLine"
-            android:layout_width="80dp"
-            android:layout_height="1dp"
-            android:layout_gravity="center_vertical"
-            android:background="@color/colorBlack" />
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:background="@color/colorBlack" />
-
-        <View
-            android:id="@+id/rightLine"
-            android:layout_width="80dp"
-            android:layout_height="1dp"
-            android:layout_gravity="center_vertical"
-            android:background="@color/colorBlack" />
+            android:gravity="right"
+            android:textColor="@color/grey51"
+            android:textSize="15sp"
+            android:text="＋500" />
 
         <TextView
-            android:id="@+id/payOutput"
-            android:layout_width="80dp"
+            android:id="@+id/output_remark"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:ellipsize="end"
-            android:gravity="center"
-            android:paddingBottom="15dp"
-            android:paddingTop="15dp"
-            android:singleLine="true"
-            android:textColor="@color/colorBlack"
-            android:textSize="22sp" />
+            android:gravity="right"
+            android:textColor="@color/grey51"
+            android:textSize="9sp"
+            android:text="税金"/>
+
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/circular_shape_layout"
+        android:layout_marginLeft="15dp"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/pay_output"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="left"
+            android:textColor="@color/grey51"
+            android:textSize="15sp"
+            android:text="－480"/>
+
+        <TextView
+            android:id="@+id/pay_remark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="left"
+            android:textColor="@color/grey51"
+            android:textSize="9sp"
+            android:text="买衣服"/>
+
+    </LinearLayout>
 </RelativeLayout>

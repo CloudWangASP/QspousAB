@@ -7,4 +7,13 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorGray">#AAAAAA</color>
     <color name="colorLogoYellow">#FFDF20</color>
+    <color name="DeepSkyBlue">#00BFFF</color>
+    <color name="Cyan">#00FFFF</color>
+    <color name="HotPink">#FF69B4</color>
+    <color name="Magenta">#FF00FF</color>
+    <color name="RoyalBlue1">#4876FF</color>
+    <color name="Snow3">#CDC9C9</color>
+    <color name="grey61">#9C9C9C</color>
+    <color name="DeepSkyBlue2">#00B2EE</color>
+    <color name="grey51">#828282</color>
 </resources>

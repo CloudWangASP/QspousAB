@@ -17,10 +17,7 @@ import java.util.ArrayList;
 
 public class DetailAdapter extends BaseAdapter {
 
-    private TextView incomeOutput;
-    private TextView payOutput;
-    private View rightLine;
-    private View leftLine;
+
     LayoutInflater layoutInflater;
     ArrayList<Double> mData = new ArrayList();
 
@@ -47,20 +44,7 @@ public class DetailAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = layoutInflater.inflate(R.layout.adapter_detail_view, null);
-        incomeOutput = (TextView) convertView.findViewById(R.id.incomeOutput);
-        payOutput = (TextView) convertView.findViewById(R.id.payOutput);
-        rightLine = convertView.findViewById(R.id.rightLine);
-        leftLine = convertView.findViewById(R.id.leftLine);
 
-        if (mData.get(position) > 0) {
-            incomeOutput.setText("+" + mData.get(position));
-            leftLine.setVisibility(View.VISIBLE);
-            rightLine.setVisibility(View.INVISIBLE);
-        } else {
-            payOutput.setText(mData.get(position) + "");
-            rightLine.setVisibility(View.VISIBLE);
-            leftLine.setVisibility(View.INVISIBLE);
-        }
         return convertView;
     }
 }

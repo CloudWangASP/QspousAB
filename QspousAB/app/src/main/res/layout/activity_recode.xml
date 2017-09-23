@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="日期"
+            android:text="添加"
             android:textColor="@color/colorWhite"
             android:textSize="15sp" />
 
@@ -37,60 +37,93 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="20dp"
-            android:text="余额"
+            android:text="日历"
             android:textColor="@color/colorWhite"
             android:textSize="15sp" />
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/myShowBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/myTitleBar">
+
     <TextView
-        android:id="@+id/add"
+        android:id="@+id/remainder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/myTitleBar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:background="@color/colorLogoYellow"
+        android:background="@drawable/circular_shape_deep_sky_blue2"
         android:gravity="center"
-        android:padding="8dp"
-        android:text="添加"
-        android:textColor="@color/colorBlack"
+        android:padding="18dp"
+        android:text="余额"
+        android:textColor="@color/colorWhite"
         android:textSize="15sp" />
 
-    <TextView
-        android:id="@+id/pay"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/myTitleBar"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_toLeftOf="@+id/add"
-        android:background="@color/colorLogoYellow"
-        android:gravity="center"
-        android:padding="8dp"
-        android:text="支出"
-        android:textColor="@color/colorBlack"
-        android:textSize="15sp" />
+        android:layout_marginRight="30dp"
+        android:layout_toLeftOf="@id/remainder"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/income"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="5月支出"
+            android:textColor="@color/grey51"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="支出金额"
+            android:textColor="@color/grey51"
+            android:textSize="9sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/myTitleBar"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@+id/add"
-        android:background="@color/colorLogoYellow"
-        android:gravity="center"
-        android:padding="8dp"
-        android:text="支出"
-        android:textColor="@color/colorBlack"
-        android:textSize="15sp" />
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/remainder"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="5月收入"
+            android:gravity="center"
+            android:textColor="@color/grey51"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="收入金额"
+            android:gravity="center"
+            android:textColor="@color/grey51"
+            android:textSize="9sp" />
+
+    </LinearLayout>
+
+    </RelativeLayout>
 
     <ListView
         android:id="@+id/detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/add"
+        android:layout_below="@+id/myShowBar"
         android:layout_marginTop="10dp"
         android:divider="#00000000"
         android:dividerHeight="0dip"
