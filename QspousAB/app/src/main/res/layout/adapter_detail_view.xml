@@ -11,8 +11,10 @@
         android:layout_centerHorizontal="true"
         android:background="@color/grey61" />
 
+    //android的textview 里面的text 怎么也不到中间的位置，这个是因为考虑了字体的padding，这个时候需要设置android:includeFontPadding="false"
     <TextView
-        android:id="@+id/circular_shape_layout"
+        android:includeFontPadding="false"
+        android:id="@+id/circular_shape"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_below="@+id/income"
@@ -20,15 +22,15 @@
         android:background="@drawable/circular_shape_hot_pink"
         android:layout_centerVertical="true"
         android:gravity="center"
-        android:textSize="18dp"
-        android:text="S"
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:textColor="@android:color/white" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_toLeftOf="@id/circular_shape_layout"
+        android:layout_toLeftOf="@id/circular_shape"
         android:layout_marginRight="15dp"
         android:layout_centerVertical="true">
 
@@ -43,7 +45,7 @@
             android:text="＋500" />
 
         <TextView
-            android:id="@+id/output_remark"
+            android:id="@+id/income_remark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -58,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_toRightOf="@id/circular_shape_layout"
+        android:layout_toRightOf="@id/circular_shape"
         android:layout_marginLeft="15dp"
         android:layout_centerVertical="true">
 

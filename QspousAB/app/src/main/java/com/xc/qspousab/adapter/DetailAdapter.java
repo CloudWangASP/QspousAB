@@ -17,6 +17,12 @@ import java.util.ArrayList;
 
 public class DetailAdapter extends BaseAdapter {
 
+    private TextView income_output;
+    private TextView pay_output;
+    private TextView income_remark;
+    private TextView pay_remark;
+    private TextView circular_shape;
+    private Context context;
 
     LayoutInflater layoutInflater;
     ArrayList<Double> mData = new ArrayList();
@@ -24,6 +30,7 @@ public class DetailAdapter extends BaseAdapter {
     public DetailAdapter(Context context, ArrayList<Double> data) {
         layoutInflater = LayoutInflater.from(context);
         this.mData = data;
+        this.context = context;
     }
 
     @Override
@@ -45,6 +52,28 @@ public class DetailAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = layoutInflater.inflate(R.layout.adapter_detail_view, null);
 
+        income_output = (TextView) convertView.findViewById(R.id.income_output);
+        pay_output = (TextView) convertView.findViewById(R.id.pay_output);
+        income_remark = (TextView) convertView.findViewById(R.id.income_remark);
+        pay_remark = (TextView) convertView.findViewById(R.id.pay_remark);
+        circular_shape = (TextView) convertView.findViewById(R.id.circular_shape);
+
+        if (mData.get(position) > 0) {
+            income_output.setText("+" + mData.get(position));
+            circular_shape.setText("+");
+//            circular_shape_layout.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.circular_shape_deep_sky_blue2));
+            income_remark.setVisibility(View.VISIBLE);
+            pay_output.setVisibility(View.INVISIBLE);
+            pay_remark.setVisibility(View.INVISIBLE);
+
+        } else {
+            pay_output.setText("" + mData.get(position));
+            circular_shape.setText("-");
+//            circular_shape_layout.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.circular_shape_hot_pink));
+            pay_remark.setVisibility(View.VISIBLE);
+            income_output.setVisibility(View.INVISIBLE);
+            income_remark.setVisibility(View.INVISIBLE);
+        }
         return convertView;
     }
 }
