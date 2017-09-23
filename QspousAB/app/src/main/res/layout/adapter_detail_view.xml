@@ -12,13 +12,15 @@
 
         <TextView
             android:id="@+id/incomeOutput"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="10dp"
+            android:ellipsize="end"
             android:gravity="center"
             android:paddingBottom="15dp"
             android:paddingTop="15dp"
+            android:singleLine="true"
             android:textColor="@color/colorBlack"
             android:textSize="22sp" />
 
@@ -44,13 +46,15 @@
 
         <TextView
             android:id="@+id/payOutput"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
+            android:ellipsize="end"
             android:gravity="center"
             android:paddingBottom="15dp"
             android:paddingTop="15dp"
+            android:singleLine="true"
             android:textColor="@color/colorBlack"
             android:textSize="22sp" />
     </LinearLayout>

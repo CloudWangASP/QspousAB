@@ -27,52 +27,53 @@ public class LoginActivity extends AppCompatActivity {
         yuangong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final NiftyDialogBuilder dialogBuilder = NiftyDialogBuilder.getInstance(LoginActivity.this);
-                dialogBuilder
-                        .withTitle("员工账本")                                  //.withTitle(null)  no title
-                        .withTitleColor(getResources().getColor(R.color.colorWhite))                                  //def
-                        .withDividerColor(getResources().getColor(R.color.colorLogoYellow))                              //def
-                        .withMessage("请在此输入密码")                     //.withMessage(null)  no Msg
-                        .withMessageColor(getResources().getColor(R.color.colorWhite))                              //def  | withMessageColor(int resid)
-                        .withDialogColor(getResources().getColor(R.color.colorLogoYellow))                               //def  | withDialogColor(int resid)
-                        .withIcon(getResources().getDrawable(R.drawable.dialog_icon))
-                        .withDuration(500)                                          //def
-                        .withEffect(Effectstype.Newspager)                                         //def Effectstype.Slidetop
-                        .withButton1Text("确定")//def gone
-                        .withButton2Text("取消")                                  //def gone
-                        .isCancelableOnTouchOutside(true)                           //def    | isCancelable(true)
-                        .setCustomView(R.layout.activity_dialog_key, v.getContext())         //.setCustomView(View or ResId,context)
-                        .setButton1Click(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                EditText keyword = (EditText) dialogBuilder.getCustomView().findViewById(R.id.keyword);
-                                if (keyword.getText().toString().equals("123456")) {
-                                    Intent intent = new Intent();
-                                    intent.setClass(LoginActivity.this, Login2Activity.class);
-                                    startActivity(intent);
-                                } else {
-                                    Toast.makeText(LoginActivity.this, "请输入正确密码", Toast.LENGTH_LONG).show();
-                                }
-                            }
-                        })
-                        .setButton2Click(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                dialogBuilder.dismiss();
-                            }
-                        })
-                        .show();
+                login(v, "员工账本", "123456", RecordActivity.class);
             }
         });
         boss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(LoginActivity.this, Login2Activity.class);
-                startActivity(intent);
+                login(v, "老板账本", "123456", ChartAnalysisActivity.class);
             }
         });
     }
 
+    private void login(View v, String title, final String psd, final Class clz) {
+        final NiftyDialogBuilder dialogBuilder = NiftyDialogBuilder.getInstance(LoginActivity.this);
+        dialogBuilder
+                .withTitle(title)
+                .withTitleColor(getResources().getColor(R.color.colorWhite))
+                .withDividerColor(getResources().getColor(R.color.colorLogoYellow))
+                .withMessage("请在此输入密码")
+                .withMessageColor(getResources().getColor(R.color.colorWhite))
+                .withDialogColor(getResources().getColor(R.color.colorLogoYellow))
+                .withIcon(getResources().getDrawable(R.drawable.dialog_icon))
+                .withDuration(500)
+                .withEffect(Effectstype.Newspager)
+                .withButton1Text("确定")
+                .withButton2Text("取消")
+                .isCancelableOnTouchOutside(true)
+                .setCustomView(R.layout.activity_dialog_key, v.getContext())
+                .setButton1Click(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        EditText keyword = (EditText) dialogBuilder.getCustomView().findViewById(R.id.keyword);
+                        if (keyword.getText().toString().equals(psd)) {
+                            Intent intent = new Intent();
+                            intent.setClass(LoginActivity.this, clz);
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(LoginActivity.this, "请输入正确密码", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                })
+                .setButton2Click(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialogBuilder.dismiss();
+                    }
+                })
+                .show();
+    }
 
 }

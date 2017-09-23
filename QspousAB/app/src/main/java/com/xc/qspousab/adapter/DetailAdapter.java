@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.xc.qspousab.R;
 
+import java.util.ArrayList;
+
 /**
  * Created by cloud_wang on 17/9/19.
  */
@@ -20,14 +22,16 @@ public class DetailAdapter extends BaseAdapter {
     private View rightLine;
     private View leftLine;
     LayoutInflater layoutInflater;
+    ArrayList<Double> mData = new ArrayList();
 
-    public DetailAdapter(Context context) {
+    public DetailAdapter(Context context, ArrayList<Double> data) {
         layoutInflater = LayoutInflater.from(context);
+        this.mData = data;
     }
 
     @Override
     public int getCount() {
-        return 30;
+        return 10;
     }
 
     @Override
@@ -47,20 +51,16 @@ public class DetailAdapter extends BaseAdapter {
         payOutput = (TextView) convertView.findViewById(R.id.payOutput);
         rightLine = convertView.findViewById(R.id.rightLine);
         leftLine = convertView.findViewById(R.id.leftLine);
-        incomeOutput.setText("+450");
-        payOutput.setText("-130");
 
-        /**
-         * 模拟真实数据
-         **/
-        if (position % 3 == 0) {
-            incomeOutput.setVisibility(View.INVISIBLE);
-            leftLine.setVisibility(View.INVISIBLE);
-        } else {
-            payOutput.setVisibility(View.INVISIBLE);
+        if (mData.get(position) > 0) {
+            incomeOutput.setText("+" + mData.get(position));
+            leftLine.setVisibility(View.VISIBLE);
             rightLine.setVisibility(View.INVISIBLE);
+        } else {
+            payOutput.setText(mData.get(position) + "");
+            rightLine.setVisibility(View.VISIBLE);
+            leftLine.setVisibility(View.INVISIBLE);
         }
-
         return convertView;
     }
 }
