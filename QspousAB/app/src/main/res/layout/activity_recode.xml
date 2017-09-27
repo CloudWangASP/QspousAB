@@ -48,25 +48,44 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/myTitleBar">
 
-    <TextView
-        android:id="@+id/remainder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/circular_shape_deep_sky_blue2"
-        android:gravity="center"
-        android:padding="18dp"
-        android:text="余额"
-        android:textColor="@color/colorWhite"
-        android:textSize="20sp" />
+        <LinearLayout
+            android:id="@+id/remainder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/circular_shape_deep_sky_blue2"
+            android:gravity="center"
+            android:padding="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="余额"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/remainder_money"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:ellipsize = "end"
+                android:singleLine="true"
+                android:gravity="center"
+                android:text="余额金额"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:layout_marginRight="30dp"
         android:layout_toLeftOf="@id/remainder"
-        android:layout_centerVertical="true"
         android:orientation="vertical">
 
         <TextView
@@ -80,10 +99,12 @@
 
         <TextView
             android:id="@+id/income_sum"
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:gravity="center"
+            android:ellipsize = "end"
+            android:singleLine="true"
             android:text="支出金额"
             android:textColor="@color/grey51"
             android:textSize="14sp" />
@@ -93,41 +114,42 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:layout_marginLeft="30dp"
         android:layout_toRightOf="@+id/remainder"
-        android:layout_centerVertical="true"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="5月支出"
             android:gravity="center"
+            android:text="5月支出"
             android:textColor="@color/grey51"
             android:textSize="18sp" />
 
         <TextView
             android:id="@+id/pay_sum"
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="收入金额"
             android:gravity="center"
+            android:ellipsize = "end"
+            android:singleLine="true"
+            android:text="收入金额"
             android:textColor="@color/grey51"
             android:textSize="14sp" />
 
     </LinearLayout>
 
-    </RelativeLayout>
-
-    <ListView
-        android:id="@+id/detail"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/myShowBar"
-        android:layout_marginTop="10dp"
-        android:divider="#00000000"
-        android:dividerHeight="0dip"
-        android:listSelector="@android:color/transparent" />
 </RelativeLayout>
+
+<ListView
+android:id="@+id/detail"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_below="@+id/myShowBar"
+android:layout_marginTop="10dp"
+android:divider="#00000000"
+android:dividerHeight="0dip"
+android:listSelector="@android:color/transparent" /></RelativeLayout>
