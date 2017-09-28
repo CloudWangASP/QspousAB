@@ -21,7 +21,7 @@
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/date"
+            android:id="@+id/add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -31,13 +31,13 @@
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/balance"
+            android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="20dp"
-            android:text="日历"
+            android:text="日期"
             android:textColor="@color/colorWhite"
             android:textSize="15sp" />
     </RelativeLayout>

@@ -1,8 +1,11 @@
 package com.xc.qspousab.activity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -17,18 +20,16 @@ import com.xc.qspousab.tools.QspousTools;
 import java.util.ArrayList;
 
 
-public class RecordActivity extends AppCompatActivity {
+public class StaffBookActivity extends AppCompatActivity {
     ListView detail;
-
     TextView paySum;
-
     TextView incomeSum;
-
     TextView remainderMoney;
-
     DetailAdapter detailAdapter;
-
     ArrayList<Double> data = new ArrayList();
+    TextView date;
+    TextView add;
+    TextView back;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -38,13 +39,23 @@ public class RecordActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recode);
+        setContentView(R.layout.activity_staff_book);
         paySum = (TextView) findViewById(R.id.pay_sum);
         incomeSum = (TextView) findViewById(R.id.income_sum);
         remainderMoney = (TextView) findViewById(R.id.remainder_money);
         detail = (ListView) findViewById(R.id.detail);
+        date = (TextView) findViewById(R.id.date);
+        add = (TextView) findViewById(R.id.add);
+        back = (TextView) findViewById(R.id.back);
 
-        //模拟数据
+         back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {finish();
+            }
+        });
+
+
+        //模拟数据,option+enter可查看报红项
         data.add(80.6);
         data.add(-20.0);
         data.add(296122371.5);
@@ -76,7 +87,7 @@ public class RecordActivity extends AppCompatActivity {
         paySum.setText(minusSum + "");
         remainderMoney.setText(remainderSum + "");
 
-        detailAdapter = new DetailAdapter(RecordActivity.this, data);
+        detailAdapter = new DetailAdapter(StaffBookActivity.this, data);
         detail.setAdapter(detailAdapter);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.

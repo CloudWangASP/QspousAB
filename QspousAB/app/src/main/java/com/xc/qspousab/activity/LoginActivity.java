@@ -17,7 +17,6 @@ public class LoginActivity extends AppCompatActivity {
     Button yuangong;
     Button boss;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,13 +27,13 @@ public class LoginActivity extends AppCompatActivity {
         yuangong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login(v, "员工账本", "123456", RecordActivity.class);
+                login(v, "员工账本", "123456", StaffBookActivity.class);
             }
         });
         boss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login(v, "老板账本", "123456", ChartAnalysisActivity.class);
+                login(v, "老板账本", "123456", BossBookActivity.class);
             }
         });
     }
@@ -60,6 +59,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         EditText keyword = (EditText) dialogBuilder.getCustomView().findViewById(R.id.keyword);
                         if (keyword.getText().toString().equals(psd)) {
+                            dialogBuilder.dismiss();
                             Intent intent = new Intent();
                             intent.setClass(LoginActivity.this, clz);
                             startActivity(intent);
