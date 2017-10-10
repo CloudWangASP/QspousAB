@@ -5,65 +5,10 @@
     android:background="@color/colorWhite">
 
     <RelativeLayout
-        android:id="@+id/popTitleBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/colorLogoYellow">
-
-        <Button
-            android:id="@+id/popClose"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="取消"
-            android:textColor="@color/colorBlack"
-            android:textSize="18sp" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/popPay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:paddingBottom="5dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
-                android:text="支出"
-                android:textColor="@color/colorWhite"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/popIncome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:padding="5dp"
-                android:paddingBottom="5dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
-                android:text="收入"
-                android:textColor="@color/colorWhite"
-                android:textSize="18dp" />
-        </LinearLayout>
-
-    </RelativeLayout>
-
-    <RelativeLayout
         android:id="@+id/popMoneyLayout"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@+id/popTitleBarLayout"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/popInputLayout"
         android:background="@color/colorWhite">
 
         <EditText
@@ -71,39 +16,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/popMyTitleBar"
             android:layout_marginRight="20dp"
+            android:gravity="center"
             android:text="0.00"
-            android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
-
+            android:textColor="@color/grey51"
+            android:textSize="22sp" />
     </RelativeLayout>
-
 
     <RelativeLayout
         android:id="@+id/popInputLayout"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@+id/popMoneyLayout"
+        android:layout_height="wrap_content"
         android:background="@color/colorLogoYellow">
 
-        <Button
+        <EditText
             android:id="@+id/popDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="70dp"
             android:text="日期"
-            android:textColor="@color/colorBlack"
+            android:textColor="@color/colorWhite"
             android:textSize="18sp" />
 
-        <Button
+        <EditText
             android:id="@+id/popRemark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="50dp"
+            android:layout_marginRight="70dp"
             android:text="备注"
-            android:textColor="@color/colorBlack"
+            android:textColor="@color/colorWhite"
             android:textSize="18sp" />
 
     </RelativeLayout>

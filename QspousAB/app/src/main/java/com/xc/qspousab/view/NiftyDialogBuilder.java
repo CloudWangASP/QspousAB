@@ -249,6 +249,11 @@ public class NiftyDialogBuilder extends Dialog implements DialogInterface {
         return this;
     }
 
+    public NiftyDialogBuilder hideMessage(){
+        this.mMessage.setVisibility(View.GONE);
+        return this;
+    }
+
     public NiftyDialogBuilder withButtonDrawable(int resid) {
         mButton1.setBackgroundResource(resid);
         mButton2.setBackgroundResource(resid);

@@ -51,7 +51,6 @@ public class DetailAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = layoutInflater.inflate(R.layout.adapter_detail_view, null);
-
         income_output = (TextView) convertView.findViewById(R.id.income_output);
         pay_output = (TextView) convertView.findViewById(R.id.pay_output);
         income_remark = (TextView) convertView.findViewById(R.id.income_remark);

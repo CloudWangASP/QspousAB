@@ -1,21 +1,16 @@
 package com.xc.qspousab.activity;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
-import com.google.android.gms.common.api.GoogleApiClient;
+import com.gitonway.lee.niftymodaldialogeffects.lib.Effectstype;
 import com.xc.qspousab.R;
 import com.xc.qspousab.adapter.DetailAdapter;
 import com.xc.qspousab.tools.QspousTools;
+import com.xc.qspousab.view.NiftyDialogBuilder;
 
 import java.util.ArrayList;
 
@@ -29,12 +24,7 @@ public class StaffBookActivity extends AppCompatActivity {
     ArrayList<Double> data = new ArrayList();
     TextView date;
     TextView add;
-    TextView back;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
+    TextView back;;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +38,19 @@ public class StaffBookActivity extends AppCompatActivity {
         add = (TextView) findViewById(R.id.add);
         back = (TextView) findViewById(R.id.back);
 
-         back.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {finish();
+            public void onClick(View v) {
+                finish();
             }
         });
 
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                enter(v);
+            }
+        });
 
         //模拟数据,option+enter可查看报红项
         data.add(80.6);
@@ -89,44 +86,37 @@ public class StaffBookActivity extends AppCompatActivity {
 
         detailAdapter = new DetailAdapter(StaffBookActivity.this, data);
         detail.setAdapter(detailAdapter);
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    public Action getIndexApiAction() {
-        Thing object = new Thing.Builder()
-                .setName("Record Page") // TODO: Define a title for the content shown.
-                // TODO: Make sure this auto-generated URL is correct.
-                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
-                .build();
-        return new Action.Builder(Action.TYPE_VIEW)
-                .setObject(object)
-                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
-                .build();
+    private void enter(View v) {
+        final NiftyDialogBuilder dialogBuilder = NiftyDialogBuilder.getInstance(StaffBookActivity.this);
+        dialogBuilder
+                .withTitle("添加事件")
+                .hideMessage()
+                .withTitleColor(getResources().getColor(R.color.colorWhite))
+                .withDividerColor(getResources().getColor(R.color.colorLogoYellow))
+                .withDialogColor(getResources().getColor(R.color.colorLogoYellow))
+                .withIcon(getResources().getDrawable(R.drawable.dialog_icon))
+                .withDuration(500)
+                .withEffect(Effectstype.Newspager)
+                .withButton1Text("确定")
+                .withButton2Text("取消")
+                .isCancelableOnTouchOutside(true)
+                .setCustomView(R.layout.activity_popup, v.getContext())
+                .setButton1Click(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                })
+                .setButton2Click(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialogBuilder.dismiss();
+                    }
+                })
+                .show();
+
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        AppIndex.AppIndexApi.start(client, getIndexApiAction());
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        AppIndex.AppIndexApi.end(client, getIndexApiAction());
-        client.disconnect();
-    }
 }
